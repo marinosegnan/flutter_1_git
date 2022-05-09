@@ -58,7 +58,7 @@ class TestPageState extends State<TestPage> with WidgetsBindingObserver {
     final BuildContext? context = key.currentContext;
 
     //Error: The getter 'context' was called on null.
-    final RenderBox? box = state?.context.findRenderObject() as RenderBox?;
+    final RenderBox? box = state?.context.findRenderObject() as RenderBox;
 
     if (box != null) {
       print('height = ${box.size.height}');
