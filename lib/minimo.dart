@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
+
+// questo Widget e' stateless, non ha variabili che cambiano
+// ogni volta che lo costruiamo sara' identico alla precedente
+// e' un esempio minimale , se si commentano alcuni widget si perdono delle proprieta' fondamentali
+
 void main() {
   runApp(MyApp());
 }
 
-// questo Widget e' stateless, non ha variabili che cambiano
-// ogni volta che lo costruiamo sara' identico alla precedente
-
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
