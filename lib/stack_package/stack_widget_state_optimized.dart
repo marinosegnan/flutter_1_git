@@ -46,17 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //  serve per intercettare l'orientamento e fare eventuali modifiche
-    // return OrientationBuilder(builder: (context, orientation) {
-    //
-    //   if (orientation == Orientation.portrait) {
-    //     print("The screen is in Portrait mode");
-    //   }
-    //
-    //   if (orientation == Orientation.landscape) {
-    //     print("The screen is in Landscape mode.");
-    //   }
-    //
     return Scaffold(
       appBar: AppBar(
         title: Text('Stack Widget esempi'),

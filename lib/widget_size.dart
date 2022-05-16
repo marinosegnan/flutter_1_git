@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-//da SO,  come recupeare dimensioni di un Widget!!!!
-// piu' altra postframecallback per capire se e' cambiata la geometria
+// da SO,  come recupeare dimensioni di un Widget ed orientamento dell schermo
+// postframecallback per capire se e' cambiata la geometria
 // dello schermo, cioe' ad esempio da portrait a landscape
 
 void main() {

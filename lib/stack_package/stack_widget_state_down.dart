@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyApp1(),
+      home: const MyApp1(),
     );
   }
 }
@@ -36,33 +36,28 @@ class MyApp1 extends StatelessWidget {
         appBar: AppBar(
           //  title: Text('Stack Widget'),
           actions: [
-            // IconButton(
-            //   icon: const Icon(Icons.shopping_cart),
-            //   tooltip: 'Open shopping cart',
-            //   onPressed: () {
-            //     // handle the press
-            //   },
-            // ),
-            TextButton(
+            TextButton(key:const ValueKey('a'),
               child: Text(' 1 ', style: stile(context)),
               onPressed: () {
+                // uso la GlobalKey per accedere allo stato del discendente
                 chiaveDelDiscendente.currentState?.aggiorna(0);
               },
             ),
-            TextButton(
+            TextButton(key:const ValueKey('b'),
               child: Text(' 2 ', style: stile(context)),
               onPressed: () {
                 chiaveDelDiscendente.currentState?.aggiorna(1);
               },
             ),
-            TextButton(
-              child: Text(' 3 ', style: stile(context)),
+            TextButton( key:const ValueKey('c'),
+              child: Text(' 3 ', style: stile(context),),
               onPressed: () {
                 chiaveDelDiscendente.currentState?.aggiorna(2);
               },
             ),
           ],
         ),
+        // la chaive serve per poi recuperare lo stato del discendente!!!!!
         body: MyHomePage(key: chiaveDelDiscendente));
   }
 
@@ -83,6 +78,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  // le funzioni che creano le tre varianti
   var varianti = [esempio1,esempio2,esempio3];
   late Function _builder = esempio1;
 

@@ -61,7 +61,7 @@ Widget esempio3() {
   return Stack(
     children: [
       Align(
-        alignment: AlignmentDirectional.topEnd,
+        alignment: AlignmentDirectional.bottomEnd,
         child: Container(
           width: 100,
           height: 100,
