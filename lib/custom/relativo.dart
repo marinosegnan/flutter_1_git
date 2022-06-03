@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
+// esempio di cusotm layout con un poaio di opzioni difefrenti
+// a seconda di come le settate il layout cambia a volte in modo non ovvvio a prima vista
+// c'e'piu' lavoro ma posso stabilire qualunque tipo di comportamento
+// qui ssono mosytrati olo un paio di casi elementari
+
 void main() {
   runApp(const MyApp());
 }

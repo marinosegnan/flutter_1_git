@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    //  serve per intercettare l'orientamento e fare eventuali modifiche
+    //  servirebbe per intercettare l'orientamento e fare eventuali modifiche
     // return OrientationBuilder(builder: (context, orientation) {
     //
     //   if (orientation == Orientation.portrait) {

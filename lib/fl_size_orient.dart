@@ -32,6 +32,10 @@ class TestPage extends StatefulWidget {
 class TestPageState extends State<TestPage> with WidgetsBindingObserver {
   Orientation? _currentOrientation;  // Es 2
   final key = new GlobalKey<TestWidgetState>(); // Es 1
+  String wi = '';
+  String he = '';
+  String orient ='';
+  late String info = wi+he+orient;
 
   @override
   initState() {
@@ -47,6 +51,8 @@ class TestPageState extends State<TestPage> with WidgetsBindingObserver {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
         _currentOrientation = MediaQuery.of(context).orientation;
+        orient = _currentOrientation.toString();
+        info = wi+he+orient;
       });
       print('After Orientation Change: $_currentOrientation');
     });
@@ -61,23 +67,28 @@ class TestPageState extends State<TestPage> with WidgetsBindingObserver {
     final RenderBox? box = state?.context.findRenderObject() as RenderBox;
 
     if (box != null) {
-      print('height = ${box.size.height}');
-      print('width= ${box.size.width}');
+      he='h= ${box.size.height},';
+      wi='w= ${box.size.width},';
     } else {
       print('box == NULL');
     }
     if (context != null) {
-      print('height = ${context.size?.height}');
-      print('width= ${context.size?.width}');
+      he='h= ${context.size?.height},';
+      wi='w= ${context.size?.width},';
     } else {
       print('context == NULL');
     }
-  }
+    setState(()=> info = wi+he+orient);
+    }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new TestWidget(key: key),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('$info',overflow: TextOverflow.visible),
+        ),
+
+        body: new TestWidget(key: key),
     );
   }
 }
